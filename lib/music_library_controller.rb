@@ -5,4 +5,8 @@ class MusicLibraryController
     @music_importer = MusicImporter.new(path)
     @music_importer.import
   end
+
+  def call
+    puts 'Howdy'
+  end
 end
