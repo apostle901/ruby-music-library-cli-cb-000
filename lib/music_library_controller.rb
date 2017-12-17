@@ -19,4 +19,8 @@ class MusicLibraryController
     input = gets.chomp
     self.call unless input == 'exit'
   end
+
+  def list_songs
+    Song.all
+  end
 end
