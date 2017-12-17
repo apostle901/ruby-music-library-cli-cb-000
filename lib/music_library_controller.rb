@@ -1,9 +1,7 @@
 class MusicLibraryController
-  attr_accessor :path, :files
+  attr_accessor :music_importer
 
   def initialize(path)
-    @path = path
-    @files = []
-    Dir.new(path).each { |file| @files << file unless file == "." || file == ".."}
+    @music_importer = MusicImporter(path)
   end
 end
