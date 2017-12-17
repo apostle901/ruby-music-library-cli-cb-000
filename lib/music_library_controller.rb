@@ -53,7 +53,7 @@ class MusicLibraryController
     idx = gets.to_i
     if idx > 0
       song = Song.all.sort_by {|obj| obj.name}[idx-1]
-      puts "Playing #{song.name} by #{song.artist.name}"
+      puts "Playing #{song.name} by #{song.artist.name}" if !song.nil?
     end
   end
 end
