@@ -42,11 +42,7 @@ class Song
   end
 
   def self.new_from_filename(file)
-    artist, song, genre = file.split(" - ")
-    son = Song.find_or_create_by_name(song)
-    son.artist = Artist.find_or_create_by_name(artist)
-    son.genre = Genre.find_or_create_by_name(genre.chomp('.mp3'))
-    son
+    file.each {|f| Song.create_from_filename(f)}
   end
 
   def self.create_from_filename(filename)
