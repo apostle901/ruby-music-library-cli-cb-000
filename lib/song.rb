@@ -46,5 +46,6 @@ class Song
     son = Song.find_or_create_by_name(song)
     song.artist = Artist.find_or_create_by_name(artist)
     song.genre = Genre.find_or_create_by_name(genre.chomp('.mp3'))
+    binding.pry
   end
 end
