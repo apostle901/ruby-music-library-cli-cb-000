@@ -8,4 +8,7 @@ class MusicImporter
     @files = []
     Dir.new(path).each { |file| @files << file unless file == "." || file == ".."}
   end
+
+  def import
+  end
 end
