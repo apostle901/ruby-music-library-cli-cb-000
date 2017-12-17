@@ -50,11 +50,10 @@ class MusicLibraryController
 
   def play_song
     puts "Which song number would you like to play?"
-    idx = gets.chomp
-    if idx.is_a? Numeric
+    idx = gets.to_i
+    if idx > 0
       song = Song.all.sort_by {|obj| obj.name}[idx-1]
       puts "Playing #{song.name} by #{song.artist.name}"
     end
-    binding.pry
   end
 end
