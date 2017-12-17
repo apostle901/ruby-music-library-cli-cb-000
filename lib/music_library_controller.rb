@@ -55,5 +55,6 @@ class MusicLibraryController
       song = Song.all.sort_by {|obj| obj.name}[idx-1]
       puts "Playing #{song.name} by #{song.artist.name}"
     end
+    binding.pry
   end
 end
