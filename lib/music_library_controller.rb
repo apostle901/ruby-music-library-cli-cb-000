@@ -50,7 +50,6 @@ class MusicLibraryController
 
   def play_song
     puts "Which song number would you like to play?"
-    self.list_songs
     idx = gets.chomp
     if idx.is_a? Numeric
       song = Song.all.sort_by {|obj| obj.name}[idx-1]
