@@ -47,4 +47,10 @@ class MusicLibraryController
     finder = Genre.find_by_name(genre)
     finder.songs.sort_by {|obj| obj.name}.each_with_index {|obj, idx| puts "#{idx+1}. #{obj.artist.name} - #{obj.name}"} if !finder.nil?
   end
+
+  def play_song
+    puts "Please select a song from the list below"
+    self.list_songs
+    song = gets.chomp
+  end
 end
