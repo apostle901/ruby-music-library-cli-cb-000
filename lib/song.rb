@@ -42,7 +42,7 @@ class Song
   end
 
   def self.new_from_filename(file)
-    file.each {|f| Song.create_from_filename(f)}
+    Song.create_from_filename(file).save
   end
 
   def self.create_from_filename(filename)
