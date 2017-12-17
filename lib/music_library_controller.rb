@@ -37,7 +37,7 @@ class MusicLibraryController
   def list_songs_by_artist
     puts "Please enter the name of an artist:"
     artist = gets.chomp
-    binding.pry
-    Artist.find_by_name(artist).songs.sort_by {|obj| obj.name}.each_with_index {|obj, idx| puts "#{idx+1}. #{obj.name} - #{obj.genre}"} if !artist.nil?
+    finder = Artist.find_by_name
+    finder.songs.sort_by {|obj| obj.name}.each_with_index {|obj, idx| puts "#{idx+1}. #{obj.name} - #{obj.genre}"} if !finder.nil?
   end
 end
